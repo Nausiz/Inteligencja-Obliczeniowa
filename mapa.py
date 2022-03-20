@@ -31,10 +31,11 @@ def magazyn_kord(mapa):
     return magazyn
 
 
-# koordynaty dostaw
+# koordynaty dostaw i wielkość towaru
 def dostawa_kord(mapa):
     result = [i for i, x in enumerate(mapa) if x[2] == "dostawa"]
     dostawa = []
     for i in range(len(result)):
-        dostawa.append([mapa[int(result[i])][0], mapa[int(result[i])][1]])
+        dostawa.append([mapa[int(result[i])][0], mapa[int(result[i])][1],
+                        random.randint(100, 200), random.choice(["Dostarcz", "Odbierz"])])
     return dostawa
