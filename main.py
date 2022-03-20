@@ -1,14 +1,18 @@
 # przykładowa generacja miejsc na mapie
 from mapa import map_gener, magazyn_kord, dostawa_kord
+from towary import wielkosc_towaru
 import matplotlib.pyplot as plt
 import pandas as pd
 
 mapa = map_gener()
 magazyn = magazyn_kord(mapa)
 dostawa = dostawa_kord(mapa)
+towary = wielkosc_towaru(dostawa)
+
 # print(mapa)
 print(f'Magazyny: {magazyn}')
 print(f'Dostawy: {dostawa}')
+print(f'Towary: {towary}')
 
 mg = pd.DataFrame(magazyn, columns=['x', 'y'])
 dst = pd.DataFrame(dostawa, columns=['x', 'y'])
