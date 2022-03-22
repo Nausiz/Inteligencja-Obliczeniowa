@@ -66,5 +66,3 @@ class Samochod:
 
 
 pass
-
-

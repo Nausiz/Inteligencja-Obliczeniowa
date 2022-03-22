@@ -9,7 +9,7 @@ def map_gener():
         c = i % 100
         mapa.append([b, c, ""])
     # generacja n punktów dostawy
-    n = random.randint(400, 600)
+    n = random.randint(405, 605)
     # print(f'n:{n}')
     points = random.sample(range(10000), n)
     for i in range(n-5):
