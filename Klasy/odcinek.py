@@ -20,16 +20,13 @@ class Odcinek:
     @property
     def samochod(self) -> Samochod:
         return self._samochod
-
+    # km
     def odleglosc(self) -> float:
-        return ((self._punktB[0]-self._punktA[0])**2+(self._punktB[1]-self._punktA[1])**2)**(1/2)
+        return round(((self._punktB[0]-self._punktA[0])**2+(self._punktB[1]-self._punktA[1])**2)**(1/2), 2)
 
+    # minuty
     def czas(self) -> float:
-        if self._samochod.kolor == 'Zielony':
-            return self.odleglosc()/self._samochod._predkosc
-        elif self._samochod.kolor == 'Niebieski':
-            return self.odleglosc()/self._samochod._predkosc
-        else:
-            return self.odleglosc()/self._samochod._predkosc
+        return round(self.odleglosc()/self._samochod._predkosc, 2)
+
 
 
