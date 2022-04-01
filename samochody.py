@@ -2,31 +2,32 @@ from Klasy.samochod import Samochod
 import random
 
 
-def losuj_samochody():
+def losuj_samochody(magazyny: list):
     lb_samochodow = random.randint(3, 6)
     samochody = []
     # print(lb_samochodow)
 
     for i in range(lb_samochodow):
-        s = Samochod()
-        s.kurs_wykonany = False
-        s.kolor = random.choice(["Zielony", "Niebieski", "Czerwony"])
-        s.magazyn = random.randint(0, 4)
+        kurs_wykonany = False
+        kolor = random.choice(["Zielony", "Niebieski", "Czerwony"])
+        pozycja = random.choice(magazyny)
 
-        if s.kolor == "Zielony":
-            s.zaladunek_czas = 1
-            s._predkosc = 1.5
-            s.pojemnosc = 1000
+        if kolor == "Zielony":
+            zaladunek_czas = 1
+            predkosc = 1.5
+            pojemnosc = 1000
 
-        elif s.kolor == "Niebieski":
-            s.zaladunek_czas = 2
-            s._predkosc = 1
-            s.pojemnosc = 1500
+        elif kolor == "Niebieski":
+            zaladunek_czas = 2
+            predkosc = 1
+            pojemnosc = 1500
 
-        elif s.kolor == "Czerwony":
-            s.zaladunek_czas = 3
-            s._predkosc = 0.75
-            s.pojemnosc = 2000
+        elif kolor == "Czerwony":
+            zaladunek_czas = 3
+            predkosc = 0.75
+            pojemnosc = 2000
+
+        s = Samochod(zaladunek_czas, pozycja, pojemnosc, predkosc, kurs_wykonany, kolor)
 
         # print(s)
         samochody.append(s)

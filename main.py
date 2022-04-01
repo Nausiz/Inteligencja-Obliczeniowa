@@ -7,15 +7,13 @@ import pandas as pd
 mapa = map_gener()
 magazyn = magazyn_kord(mapa)
 dostawa = dostawa_kord(mapa)
-samochody = losuj_samochody()
+samochody = losuj_samochody(magazyn)
 
 # print(mapa)
 print(f'Magazyny: {magazyn}')
 print(f'Dostawy: {dostawa}')
 
 print(*samochody, sep='\n')
-# for s in samochody:
-#    print(s)
 
 mg = pd.DataFrame(magazyn, columns=['x', 'y'])
 dst = pd.DataFrame(dostawa, columns=['x', 'y', 'wielkosc', 'dostarcz/odbierz'])
