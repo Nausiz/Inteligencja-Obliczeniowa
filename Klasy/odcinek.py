@@ -1,5 +1,6 @@
 from Klasy.samochod import Samochod
 
+
 class Odcinek:
     def __init__(self, punktA: list, punktB: list, samochod: Samochod):
         self._punktA = punktA
@@ -20,13 +21,11 @@ class Odcinek:
     @property
     def samochod(self) -> Samochod:
         return self._samochod
+
     # km
     def odleglosc(self) -> float:
         return round(((self._punktB[0]-self._punktA[0])**2+(self._punktB[1]-self._punktA[1])**2)**(1/2), 2)
 
     # minuty
     def czas(self) -> float:
-        return round(self.odleglosc()/self._samochod._predkosc, 2)
-
-
-
+        return round(self.odleglosc()/self._samochod.predkosc, 2)

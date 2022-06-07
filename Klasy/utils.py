@@ -1,6 +1,7 @@
 import math
 from samochody import Samochod
 
+
 def najblizszy_punkt(samochod: Samochod, lista_punktow: list) -> list:
     min_dlugosc = 200
     min_x = -1

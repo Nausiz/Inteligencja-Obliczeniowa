@@ -1,8 +1,8 @@
 # przykładowa generacja miejsc na mapie
 from mapa import map_gener, magazyn_kord, dostawa_kord
-from samochody import losuj_samochody, Samochod
+from samochody import losuj_samochody
 from Klasy.utils import najblizszy_punkt
-import matplotlib.pyplot as plt
+import plotly.express as px
 import pandas as pd
 
 
@@ -20,8 +20,9 @@ print(*samochody, sep='\n')
 mg = pd.DataFrame(magazyn, columns=['x', 'y'])
 dst = pd.DataFrame(dostawa, columns=['x', 'y', 'wielkosc', 'dostarcz/odbierz'])
 print(dst)
-plt.plot(mg['x'], mg['y'], '.g')
-plt.plot(dst['x'], dst['y'], '.y')
-plt.show()
 
 print(najblizszy_punkt(samochody[0], dostawa))
+
+fig = px.scatter(dst, x='x', y='y', color=dst['dostarcz/odbierz'])
+fig.add_scatter(x=mg['x'], y=mg['y'], mode="markers")
+fig.show()

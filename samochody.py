@@ -12,6 +12,11 @@ def losuj_samochody(magazyny: list):
         kolor = random.choice(["Zielony", "Niebieski", "Czerwony"])
         pozycja = random.choice(magazyny)
 
+        zaladunek_czas = 0
+        predkosc = 1.5
+        pojemnosc = 1000
+        aktualny_zaladunek = 0
+
         if kolor == "Zielony":
             zaladunek_czas = 1
             predkosc = 1.5

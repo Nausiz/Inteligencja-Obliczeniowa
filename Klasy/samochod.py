@@ -10,7 +10,6 @@ class Samochod:
         self.kurs_wykonany = kurs_wykonany
         self.kolor = kolor
 
-
     # magazyn jako indeks 0-4
     @property
     def pozycja(self):
@@ -29,7 +28,6 @@ class Samochod:
     def kurs_wykonany(self, value: bool):
         self._kurs_wykonany = value
 
-
     @property
     def aktualny_zaladunek(self):
         return self._aktualny_zaladunek
@@ -47,5 +45,6 @@ class Samochod:
                f'Aktualny zaladunek: {self.aktualny_zaladunek}, '\
                f'Pozycja: {self.pozycja}, ' \
                f'Kurs wykonany: {self.kurs_wykonany}'
+
 
 pass
