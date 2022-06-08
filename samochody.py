@@ -18,19 +18,19 @@ def losuj_samochody(magazyny: list):
         aktualny_zaladunek = 0
 
         if kolor == "Zielony":
-            zaladunek_czas = 1
+            zaladunek_czas = 0.016 #1 sekunda w minutach
             predkosc = 1.5
             pojemnosc = 1000
             aktualny_zaladunek = pojemnosc/2
 
         elif kolor == "Niebieski":
-            zaladunek_czas = 2
+            zaladunek_czas = 0.033 #2 sekundy w minutach
             predkosc = 1
             pojemnosc = 1500
             aktualny_zaladunek = pojemnosc/2
 
         elif kolor == "Czerwony":
-            zaladunek_czas = 3
+            zaladunek_czas = 0.05 #3 sekundy w minutach
             predkosc = 0.75
             pojemnosc = 2000
             aktualny_zaladunek = pojemnosc/2

@@ -1,7 +1,7 @@
 class Samochod:
 
     def __init__(self, zaladunek_czas, pozycja, pojemnosc, predkosc, aktualny_zaladunek, kurs_wykonany, kolor):
-        self.rozladunek_czas = 2
+        self.rozladunek_czas = 0.033
         self.zaladunek_czas = zaladunek_czas
         self.pozycja = pozycja
         self.pojemnosc = pojemnosc
@@ -9,8 +9,10 @@ class Samochod:
         self.aktualny_zaladunek = aktualny_zaladunek
         self.kurs_wykonany = kurs_wykonany
         self.kolor = kolor
+        self.czas = 0
+        self.czas_do_przerwy = 0
 
-    # magazyn jako indeks 0-4
+    # pozycja w [x,y]
     @property
     def pozycja(self):
         return self._pozycja
@@ -36,6 +38,24 @@ class Samochod:
     def aktualny_zaladunek(self, value):
         self._aktualny_zaladunek = value
 
+    # łączny czas w trasie
+    @property
+    def czas(self):
+        return self._czas
+
+    @czas.setter
+    def czas(self, value):
+        self._czas = value
+
+    # kontrola czasu do przerwy
+    @property
+    def czas_do_przerwy(self):
+        return self._czas_do_przerwy
+
+    @czas_do_przerwy.setter
+    def czas_do_przerwy(self, value):
+        self._czas_do_przerwy = value
+
     def __str__(self):
         return f'Kolor: {self.kolor}, '\
                f'Pojemnosc: {self.pojemnosc}, '\
@@ -45,6 +65,7 @@ class Samochod:
                f'Aktualny zaladunek: {self.aktualny_zaladunek}, '\
                f'Pozycja: {self.pozycja}, ' \
                f'Kurs wykonany: {self.kurs_wykonany}'
+
 
 
 pass

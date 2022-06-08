@@ -24,7 +24,7 @@ def najblizszy_punkt(samochod: Samochod, lista_punktow: list) -> list:
                 min_y = row[1]
     if min_dlugosc < 200:
         samochod.pozycja = [min_x, min_y]
-    return [min_x, min_y]
+    return [min_x, min_y, min_dlugosc]
 
 
 def najblizszy_magazyn(samochod: Samochod, lista_punktow: list) -> list:
@@ -38,4 +38,16 @@ def najblizszy_magazyn(samochod: Samochod, lista_punktow: list) -> list:
             min_x = row[0]
             min_y = row[1]
     samochod.pozycja = [min_x, min_y]
-    return [min_x, min_y]
+    return [min_x, min_y, min_dlugosc]
+
+def czas(samochod: Samochod, odlegloc):
+    return round(odleglosc/samochod.predkosc, 2)
+
+
+def sprawdz_przerwe(samochod: Samochod):
+    if samochod.czas_do_przerwy >= 180:
+       samochod.czas += 10
+       samochod.czas_do_przerwy = 0
+       #print('Przerwa')
+
+

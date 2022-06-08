@@ -1,7 +1,7 @@
 # przykładowa generacja miejsc na mapie
 from mapa import map_gener, magazyn_kord, dostawa_kord
 from samochody import losuj_samochody
-from Klasy.utils import najblizszy_punkt, najblizszy_magazyn
+from Klasy.utils import najblizszy_punkt, najblizszy_magazyn, czas, sprawdz_przerwe
 import plotly.express as px
 import pandas as pd
 
@@ -44,14 +44,17 @@ while True:
         if len(dostarczony) > 0:
             if dostawa[dostarczony[0]][3] == 'Odbierz':
                 s.aktualny_zaladunek = s.aktualny_zaladunek + dostawa[dostarczony[0]][2]
+                s.czas += s.zaladunek_czas
+                print(round(s.czas, 2))
             else:
                 s.aktualny_zaladunek = s.aktualny_zaladunek - dostawa[dostarczony[0]][2]
+                s.czas += s.rozladunek_czas
+            dostawa.pop(dostarczony[0])
         else:
             p = najblizszy_magazyn(s, magazyn)
             s.aktualny_zaladunek = s.pojemnosc * 0.8
         if s.aktualny_zaladunek < 0:
             print(f'zjebało się {s.aktualny_zaladunek}')
-        dostawa.pop(dostarczony[0])
         trasy[i]['x'].append(p[0])
         trasy[i]['y'].append(p[1])
         if len(dostawa) == 0:
