@@ -11,6 +11,7 @@ class Samochod:
         self.kolor = kolor
         self.czas = 0
         self.czas_do_przerwy = 0
+        self.przebyta_droga = 0
 
     # pozycja w [x,y]
     @property

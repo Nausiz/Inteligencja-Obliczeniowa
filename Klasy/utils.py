@@ -40,7 +40,7 @@ def najblizszy_magazyn(samochod: Samochod, lista_punktow: list) -> list:
     samochod.pozycja = [min_x, min_y]
     return [min_x, min_y, min_dlugosc]
 
-def czas(samochod: Samochod, odlegloc):
+def czas(samochod: Samochod, odleglosc):
     return round(odleglosc/samochod.predkosc, 2)
 
 
