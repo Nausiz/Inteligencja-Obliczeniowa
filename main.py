@@ -28,6 +28,7 @@ print(dst)
 
 fig = px.scatter(dst, x='x', y='y', color=dst['dostarcz/odbierz'])
 fig.add_scatter(x=mg['x'], y=mg['y'], mode="markers", name='magazyn')
+fig.show()
 
 # d = {'x': [0, 1, 2, 3], 'y': [0, 1, 2, 3]}
 # df1 = pd.DataFrame(data=d)
